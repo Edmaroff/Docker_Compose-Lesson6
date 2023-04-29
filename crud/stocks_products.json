@@ -1,0 +1,159 @@
+[
+  {
+    "model": "logistic.product",
+    "pk": 1,
+    "fields": {
+      "title": "Огурец",
+      "description": "Сочнейший"
+    }
+  },
+  {
+    "model": "logistic.product",
+    "pk": 2,
+    "fields": {
+      "title": "Помидор",
+      "description": "Вкуснейший"
+    }
+  },
+  {
+    "model": "logistic.product",
+    "pk": 3,
+    "fields": {
+      "title": "Арбуз",
+      "description": "Спелейший"
+    }
+  },
+  {
+    "model": "logistic.product",
+    "pk": 4,
+    "fields": {
+      "title": "Дыня",
+      "description": "Сладчайшая"
+    }
+  },
+  {
+    "model": "logistic.stock",
+    "pk": 1,
+    "fields": {"address": "Москва"}
+  },
+  {
+    "model": "logistic.stock",
+    "pk": 2,
+    "fields": {"address": "Иркутск"}
+  },
+  {
+    "model": "logistic.stock",
+    "pk": 3,
+    "fields": {"address": "Ангарск"}
+  },
+  {
+    "model": "logistic.stock",
+    "pk": 4,
+    "fields": {"address": "Новосибирск"}
+  },
+  {
+    "model": "logistic.stock",
+    "pk": 5,
+    "fields": {"address": "Байкал"}
+  },
+  {
+    "model": "logistic.stockproduct",
+    "pk": 1,
+    "fields": {
+      "stock": "1",
+      "product": "1",
+      "quantity": "10",
+      "price": "100.00"
+    }
+  },
+  {
+    "model": "logistic.stockproduct",
+    "pk": 2,
+    "fields": {
+      "stock": "1",
+      "product": "2",
+      "quantity": "20",
+      "price": "200.00"
+    }
+  },
+  {
+    "model": "logistic.stockproduct",
+    "pk": 3,
+    "fields": {
+      "stock": "1",
+      "product": "3",
+      "quantity": "30",
+      "price": "300.00"
+    }
+  },
+  {
+    "model": "logistic.stockproduct",
+    "pk": 4,
+    "fields": {
+      "stock": "1",
+      "product": "4",
+      "quantity": "40",
+      "price": "400.00"
+    }
+  },
+  {
+    "model": "logistic.stockproduct",
+    "pk": 5,
+    "fields": {
+      "stock": "2",
+      "product": "1",
+      "quantity": "6",
+      "price": "1000.00"
+    }
+  },
+  {
+    "model": "logistic.stockproduct",
+    "pk": 6,
+    "fields": {
+      "stock": "2",
+      "product": "2",
+      "quantity": "45",
+      "price": "180.00"
+    }
+  },
+  {
+    "model": "logistic.stockproduct",
+    "pk": 7,
+    "fields": {
+      "stock": "2",
+      "product": "3",
+      "quantity": "1",
+      "price": "1800.00"
+    }
+  },
+  {
+    "model": "logistic.stockproduct",
+    "pk": 8,
+    "fields": {
+      "stock": "3",
+      "product": "1",
+      "quantity": "54",
+      "price": "950.00"
+    }
+  },
+  {
+    "model": "logistic.stockproduct",
+    "pk": 9,
+    "fields": {
+      "stock": "3",
+      "product": "2",
+      "quantity": "4",
+      "price": "50.00"
+    }
+  },
+  {
+    "model": "logistic.stockproduct",
+    "pk": 10,
+    "fields": {
+      "stock": "4",
+      "product": "1",
+      "quantity": "1",
+      "price": "1000.00"
+    }
+  }
+]

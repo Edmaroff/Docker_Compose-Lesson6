@@ -1,0 +1,69 @@
+version: '3.9'
+
+volumes:
+  pgdata:
+  static_volume:
+
+services:
+  postgresdb:
+    image: postgres:latest
+    environment:
+          POSTGRES_DB: 'name_db'
+          POSTGRES_USER: 'user_db'
+          POSTGRES_PASSWORD: 'pwd_db'
+    healthcheck:
+      test: [ 'CMD-SHELL', 'pg_isready -U user_db -d name_db' ]
+      interval: 10s
+      timeout: 15s
+      retries: 5
+      start_period: 30s
+    restart: unless-stopped
+    deploy:
+      resources:
+        limits:
+          cpus: '1'
+          memory: 4G
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+      - ./logs:/var/log
+    ports:
+      - '5432:5432'
+
+  crud:
+    build: ./crud
+    expose:
+      - 8000
+    depends_on:
+      - postgresdb
+    volumes:
+      - static_volume:/usr/src/stocks_products/static
+    command: sh /usr/src/stocks_products/docker-entrypoint.sh
+
+  nginx:
+    build: ./nginx
+    ports:
+      - '1010:80'
+    volumes:
+      - static_volume:/usr/src/stocks_products/static
+    depends_on:
+      - crud
+
+#  pgadmin:
+#    image: dpage/pgadmin4:latest
+#    environment:
+#      PGADMIN_DEFAULT_EMAIL: 'pg@pg.ru'
+#      PGADMIN_DEFAULT_PASSWORD: 'pgwd'
+#      PGADMIN_CONFIG_SERVER_MODE: 'False'
+#    volumes:
+#      - ./pgadmin:/var/lib/pgadmin
+#    ports:
+#      - '5050:80'
+#    restart: unless-stopped
+#    deploy:
+#      resources:
+#        limits:
+#          cpus: '0.5'
+#          memory: 1G
+
+
+
