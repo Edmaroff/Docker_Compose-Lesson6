@@ -48,6 +48,7 @@ services:
     depends_on:
       - crud
 
+## Подключение графического интерфейса к БД
 #  pgadmin:
 #    image: dpage/pgadmin4:latest
 #    environment:

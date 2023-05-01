@@ -1,9 +1,5 @@
 #!/bin/bash
 
-# Сбор статических файлов
-echo "Collect static files"
-python manage.py collectstatic --noinput
-
 # Прогон миграций
 echo "Apply database migrations"
 python manage.py migrate
